@@ -1,6 +1,5 @@
 <?php
-set_include_path( get_include_path().PATH_SEPARATOR."..");
-include_once("xlsxwriter.class.php");
+include_once __DIR__."/../xlsxwriter.class.php";
 
 $header = array(
   'c1-text'=>'string',//text
@@ -29,7 +28,7 @@ foreach($rows as $row)
 
 //$writer->writeSheet($rows,'Sheet1', $header);//or write the whole sheet in 1 call
 
-$writer->writeToFile('xlsx-simple.xlsx');
+$writer->writeToFile(__DIR__.'/xlsx-simple.xlsx');
 //$writer->writeToStdOut();
 //echo $writer->writeToString();
 

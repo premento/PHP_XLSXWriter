@@ -1,6 +1,5 @@
 <?php
-set_include_path( get_include_path().PATH_SEPARATOR."..");
-include_once("xlsxwriter.class.php");
+include_once __DIR__."/../xlsxwriter.class.php";
 
 
 $writer = new XLSXWriter();
@@ -11,7 +10,7 @@ $styles4 = array( ['font-style'=>'bold'],['font-style'=>'italic'],['font-style'=
 $styles5 = array( ['color'=>'#f00'],['color'=>'#0f0'],['color'=>'#00f'],['color'=>'#666']);
 $styles6 = array( ['fill'=>'#ffc'],['fill'=>'#fcf'],['fill'=>'#ccf'],['fill'=>'#cff']);
 $styles7 = array( 'border'=>'left,right,top,bottom');
-$styles8 = array( ['halign'=>'left'],['halign'=>'right'],['halign'=>'center'],['halign'=>'none']);
+$styles8 = array( ['halign'=>'left'],['halign'=>'right'],['halign'=>'center'],['halign'=>'justify']);
 $styles9 = array( array(),['border'=>'left,top,bottom'],['border'=>'top,bottom'],['border'=>'top,bottom,right']);
 
 
@@ -24,6 +23,6 @@ $writer->writeSheetRow('Sheet1', $rowdata = array(300,234,456,789), $styles6 );
 $writer->writeSheetRow('Sheet1', $rowdata = array(300,234,456,789), $styles7 );
 $writer->writeSheetRow('Sheet1', $rowdata = array(300,234,456,789), $styles8 );
 $writer->writeSheetRow('Sheet1', $rowdata = array(300,234,456,789), $styles9 );
-$writer->writeToFile('xlsx-styles.xlsx');
+$writer->writeToFile(__DIR__.'/xlsx-styles.xlsx');
 
 

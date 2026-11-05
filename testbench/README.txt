@@ -9,6 +9,6 @@ xlsx spreadsheet and then see what the resulting xml is, and diff it with your t
 
 ```sudo apt-get install xmllint libxml2-utils```
 
-xlsxwriter.class.Test.php
+Unit tests
 
-A simple PHPUnit test for a basic spreadsheet
+The PHPUnit tests live in ../tests (run them from the project root with `composer test`).

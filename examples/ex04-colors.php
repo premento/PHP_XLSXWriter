@@ -1,6 +1,5 @@
 <?php
-set_include_path( get_include_path().PATH_SEPARATOR."..");
-include_once("xlsxwriter.class.php");
+include_once __DIR__."/../xlsxwriter.class.php";
 
 $writer = new XLSXWriter();
 $colors = array('ff','cc','99','66','33','00');
@@ -15,4 +14,4 @@ foreach($colors as $b) {
 		$writer->writeSheetRow('Sheet1', $rowdata, $rowstyle );
 	}
 }
-$writer->writeToFile('xlsx-colors.xlsx');
+$writer->writeToFile(__DIR__.'/xlsx-colors.xlsx');

@@ -1,5 +1,5 @@
 <?php
-include_once("../xlsxwriter.class.php");
+include_once __DIR__."/../xlsxwriter.class.php";
 
 $header = array(
     'year'=>'string',

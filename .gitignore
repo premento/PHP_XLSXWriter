@@ -1,3 +1,7 @@
 vendor
 .idea
 examples/*.xlsx
+composer.lock
+.phpunit.result.cache
+.phpunit.cache
+/example.xlsx

@@ -1,6 +1,5 @@
 <?php
-set_include_path( get_include_path().PATH_SEPARATOR."..");
-include_once("xlsxwriter.class.php");
+include_once __DIR__."/../xlsxwriter.class.php";
 
 $chars = 'abcdefgh';
 
@@ -16,5 +15,5 @@ for($i=0; $i<1000; $i++)
         date('Y-m-d H:i:s',time()-(rand()%31536000))
     ));
 }
-$writer->writeToFile('xlsx-autofilter.xlsx');
+$writer->writeToFile(__DIR__.'/xlsx-autofilter.xlsx');
 echo '#'.floor((memory_get_peak_usage())/1024/1024)."MB"."\n";
