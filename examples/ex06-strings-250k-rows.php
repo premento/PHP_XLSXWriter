@@ -1,6 +1,5 @@
 <?php
-set_include_path( get_include_path().PATH_SEPARATOR."..");
-include_once("xlsxwriter.class.php");
+include_once __DIR__."/../xlsxwriter.class.php";
 
 $chars = "abcdefghijklmnopqrstuvwxyz0123456789 ";
 $s = '';
@@ -20,6 +19,6 @@ for($i=0; $i<250000; $i++)
 	$s4 = substr($s, rand()%16000, rand()%5+5);
     $writer->writeSheetRow('Sheet1', array($s1, $s2, $s3, $s4) );
 }
-$writer->writeToFile('xlsx-strings-250k.xlsx');
+$writer->writeToFile(__DIR__.'/xlsx-strings-250k.xlsx');
 echo '#'.floor((memory_get_peak_usage())/1024/1024)."MB"."\n";
 

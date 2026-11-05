@@ -1,5 +1,5 @@
 <?php
-include_once("../../xlsxwriter.class.php");
+include_once __DIR__."/../../xlsxwriter.class.php";
 
 $writer = new XLSXWriter();
 $keywords = array('some','interesting','keywords');

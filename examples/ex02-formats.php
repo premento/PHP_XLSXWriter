@@ -1,6 +1,5 @@
 <?php
-set_include_path( get_include_path().PATH_SEPARATOR."..");
-include_once("xlsxwriter.class.php");
+include_once __DIR__."/../xlsxwriter.class.php";
 
 $sheet1header = array(
     'c1-string'=>'string',
@@ -23,7 +22,7 @@ $sheet2header = array(
     'custom-date4'=>'MM/DD/YYYY HH:MM:SS',
     'custom-date5'=>'YYYY-MM-DD HH:MM:SS',
     'custom-date6'=>'YY MMMM',
-    'custom-date7'=>'QQ YYYY',
+    'custom-date7'=>'DDDD, MMMM D, YYYY',
     'custom-time1'=>'HH:MM',
     'custom-time2'=>'HH:MM:SS',
 );
@@ -52,7 +51,7 @@ $writer->writeSheetHeader('Dates',$sheet2header);
 $writer->writeSheetRow('Dates',array($date,$date,$date,$date,$date,$date,$date,$date,$date,$date,$time,$time) );
 $writer->writeSheetHeader('Currencies',$sheet3header);
 $writer->writeSheetRow('Currencies',array($amount,$amount,$amount,$amount,$amount,$amount,$amount,$amount,$amount) );
-$writer->writeToFile('xlsx-formats.xlsx');
+$writer->writeToFile(__DIR__.'/xlsx-formats.xlsx');
 //$writer->writeToStdOut();
 //echo $writer->writeToString();
 

@@ -1,6 +1,5 @@
 <?php
-set_include_path( get_include_path().PATH_SEPARATOR."..");
-include_once("xlsxwriter.class.php");
+include_once __DIR__."/../xlsxwriter.class.php";
 
 $writer = new XLSXWriter();
 $keywords = array('some','interesting','keywords');
@@ -38,7 +37,7 @@ $writer->writeSheet($rows, $sheet2);
 
 //----
 $sheet3 = 'fonts';
-$format = array('font'=>'Arial','font-size'=>10,'font-style'=>'bold,italic', 'fill'=>'#eee','color'=>'#f00','fill'=>'#ffc', 'border'=>'top,bottom', 'halign'=>'center');
+$format = array('font'=>'Arial','font-size'=>10,'font-style'=>'bold,italic', 'color'=>'#f00','fill'=>'#ffc', 'border'=>'top,bottom', 'halign'=>'center');
 $writer->writeSheetRow($sheet3, $row=array(101,102,103,104,105,106,107,108,109,110), $format);
 $writer->writeSheetRow($sheet3, $row=array(201,202,203,204,205,206,207,208,209,210), $format);
 
@@ -49,6 +48,6 @@ $writer->writeSheetHeader($sheet4, ["col1"=>"string", "col2"=>"string"], $col_op
 $writer->writeSheetRow($sheet4, array(101,'this text will wrap'    ), $row_options = array('height'=>30,'wrap_text'=>true));
 $writer->writeSheetRow($sheet4, array(201,'this text is hidden'    ), $row_options = array('height'=>30,'hidden'=>true));
 $writer->writeSheetRow($sheet4, array(301,'this text will not wrap'), $row_options = array('height'=>30,'collapsed'=>true));
-$writer->writeToFile('xlsx-advanced.xlsx');
+$writer->writeToFile(__DIR__.'/xlsx-advanced.xlsx');
 
 
